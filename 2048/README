@@ -1,0 +1,62 @@
+Programarea Calculatoarelor, seria CC
+Tema2 - 2048
+
+Ene Vlad - Mihnea 311 CC
+
+Cerinte rezolvate: 1, 2, 3, 4, 5
+
+SE RECOMANDA CA TERMINALUL SA FIE IN FULLSCREEN LA RULAREA JOCULUI
+
+Cerinta 1
+-am o matrice de caractere care reprezinta optiunile meniului
+-creez mai intai un window unde afisez si optiunile si le dau highlight in functie de optiunea pe care ma aflu
+-navighez optiuniile prin sagetiile sus si jos si selecterz optiunea prin enter
+-highlight-ul se face cand navighez prin switch
+-apelez de fiecare print menu pana intru in joc
+-resume va afisa un mesaj daca nu se incepe inainte un joc nou(bonus)
+
+Cerinta 2
+-pentru tabla creez un window nou
+-apelez apoi functia print_board unde dau box la window
+-creez liniile din intrerior prin intermediul mvwvline si mvwhline care deseneaza un anumit numar de caractere intr-o linie
+verticala sau orizontala, incepand cu o pozitie data dintr-un window
+-scorul este afisat in stanga sus tablei
+-highscorul este afisat in partea din dreapta sus a tablei(bonus)
+-panoul de control afiseaza tastele care pot fi apasate pentru a muta tabla si cu care te poti intoarce inapoi in meniu si timpul
+curent care se schimba dupa o miscare automata sau o tasta de mutare apasata
+
+Cerinta 3
+-am o functie pentru fiecare directie de mutare sus, jos, stanga si dreapta
+-in fiecare directie se incearca mutarea si imbinarea si daca are loc se adauga o valoare noua de 2 sau 4 in matricea board
+-verificare petrnu mutarea porneste in sens invers directiei de miscare
+-dupa fiecare mutare valida sau invalida se acuatilzeaza afisarea boardului si scoreul cu functia update_board
+-functia init_board imi initializeaza matricea cu 0 si doar 2 valori cu 2 sau 4
+-functia add_tile imi adauga o valoarea aleatoare intre 2 si 4 in board
+-dupa imbnarea a doua celule se adauga la scor valoarea celulei rezultate
+-petntru fiecare valoare din matrice 2, 4, 16 etc. exista o culoare separata
+-fiecare culoare care nu este data de biblioteca ncurses este initializata in functia initcolor
+-in functai initcolor sunt definite si perechi de culori pentru foreground si background
+-sunt colorate numai numerele
+
+Cerinta 4
+-este folosita functia halfdelay din biblioteca ncurses care asteapta 10 secunde pentru o tasta apasata
+-daca niciodata nu este apasata atunci este returnat ERR (error) si atunci are loc mutarea automata
+-sub tabla este afisata ce mutare autoamata are sa urmeze
+-se verifica fiecare mutare
+-daca are loc inseamna ca este valida si atunci verific cate zerouri a creat mutarea
+-daca e mai mare ca numarul precedent retin mutarea
+-fiecare directie de mutare are corespondent un numar
+0 - stanga; 1 - dreapta; 2 - sus; 3 - jos;
+
+Cerinta 5
+-o functie pentru verificarea conditiei de castig si conditiei de pierdut
+-pentru fiecare se afiseaza un ecran separat
+-daca castigi se afiseaza "YOU WON!!" alaturi de score si highscore
+-daca pierzi se afiseaza "GAME OVER" alaturi de score si highscore
+-la ambele se asteapta apasarea oricarei taste pentru a se intoarce la meniu
+
+
+->highscoreul se reseteaza la rulare
+
+Pentru compilare: make
+Pentru rulare: make run
